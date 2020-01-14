@@ -25,8 +25,8 @@ footer{
     box-shadow: 0 -5px 5px -5px #333;
 }
 img{
-    width: 250px !important;
-    height: 150px !important;
+    width: 250px;
+    height: 150px;
 }
 
 .page-item.active .page-link {
@@ -50,6 +50,7 @@ img{
 @media (max-width:700px){
     img{
         width: 100% !important;
+        height: 100% !important;
     }
     .media{
         flex-direction: column;
