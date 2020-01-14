@@ -7,7 +7,7 @@ COUNT_BLOCKS_ON_PAGE = 10
 
 def item(request, title):         
     current_new = New.objects.filter(url_name=title).first()
-    return render(request, 'page.html', {
+    return render(request, 'onesnews.html', {
         "current_new": current_new,
     })  
     
