@@ -31,6 +31,7 @@
                     Трансляция
                 </h1>
                 <div id="ytplayer" class="d-flex mr-3" ></div>
+                <iframe src="https://www.youtube.com/embed/" height="auto" width="100%"></iframe>
             </div>
 
             <!-- News -->
@@ -51,7 +52,7 @@
 
                 <ul class="list-unstyled">
                     {% for item in snews%}
-                        <li class="media">
+                        <li class="media my-4">
                             <img class="d-flex mr-3" src="{{item.img_url}}" alt="Generic placeholder image">
                             <div class="media-body">
                                     <h5 class="mt-0 mb-1 font-weight-bold">{{item.title}}</h5>
