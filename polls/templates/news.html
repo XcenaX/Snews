@@ -52,14 +52,16 @@
 
                 <ul class="list-unstyled">
                     {% for item in snews%}
-                        <li class="media my-4">
-                            <img class="d-flex mr-3" src="{{item.img_url}}" alt="Generic placeholder image">                            
-                            <div class="media-body">
-                                    <h5 class="mt-0 mb-1 font-weight-bold">{{item.title}}</h5>
-                                    <span class="date">{{item.pub_date}}</span>
-                                    <p>{{item.content|slice:"0:100"}}...</p>
-                            </div>
-                        </li>
+                        <a href="{% url 'polls:new' item.url_name%}">
+                            <li class="media my-4">
+                                <img class="d-flex mr-3" src="{{item.img_url}}" alt="Generic placeholder image">                            
+                                <div class="media-body">
+                                        <h5 class="mt-0 mb-1 font-weight-bold">{{item.title}}</h5>
+                                        <span class="date">{{item.pub_date}}</span>
+                                        <p>{{item.content|slice:"0:100"}}...</p>
+                                </div>
+                            </li>
+                        </a>
                     {% endfor %}
                     
 
