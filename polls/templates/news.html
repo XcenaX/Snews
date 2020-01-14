@@ -74,7 +74,7 @@
                                 </li>
                             {% else %}
                                 <li class="page-item">
-                                    <a href="{% url 'polls:home'%}?page={{page}}" class="page-link"> {{page}} </a>
+                                    <a href="{% url 'polls:home'%}?page={{page}}&pub_date={{pub_date}}" class="page-link"> {{page}} </a>
                                 </li>
                             {% endif %}
                         {% endfor %}
