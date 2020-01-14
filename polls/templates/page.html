@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'polls/styles/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/styles/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/styles/page.css' %}">    
+{% endblock %}    
+
+{% block info %}
+    <!-- НОВОСТИ -->
+    <div class="col-xs-12 col-md-8 col-lg-8 pull-right content-offset">
+        <h1 class="pg-title">
+            {{current_new.title}}
+        </h1>
+
+        <div class="media-block-wrap">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="media-block horizontal with-date has-img size-3">
+                            <div href="#" class="mainimg">                                        
+                                <img src="{{current_new.img_url}}">
+                            </div>
+                            <div class="content">
+                                <span class="date">{{current_new.pub_date}}</span>                                    
+                                <h4 class="media-block__title">                                            
+                                    <span class="title">{{ current_new.content }}</span>
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
