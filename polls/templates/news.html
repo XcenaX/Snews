@@ -43,7 +43,7 @@
 
                 <!-- DATEPICKER -->
                 <form action="" type="GET" class="input-group mb-3">
-                    <input type="text" name="pub_date" id="datepicker" class="form-control datepicker" placeholder="Выберите дату">
+                    <input type="text" name="pub_date" autocomplete="off" id="datepicker" class="form-control datepicker" placeholder="Выберите дату">
                     <div class="input-group-append">
                         <button class="btn" type="submit">Просмотреть новости</button>
                     </div>
@@ -67,7 +67,7 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pg-blue">
                         {% for page in pages%}
-                            {% if page == blocks.number %}
+                            {% if page == snews.number %}
                                 <li class="page-item active">
                                     <span class="page-link">{{page}}</span>
                                 </li>
@@ -88,9 +88,7 @@
 {% block scripts %}
     <script src="{% static 'polls/scripts/bootstrap-datepicker.min.js'%}"></script>
     <script>
-        $('li').click(function () {
-            $(this).addClass('active').siblings().removeClass('active');
-        });
+        
         // russian datepicker
         !function (a) { a.fn.datepicker.dates.ru = { days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"], daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"], daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"], months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"], monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"], today: "Сегодня", clear: "Очистить", format: "yyyy-mm-dd", weekStart: 1, monthsTitle: "Месяцы" } }(jQuery);
         // create datepicker
