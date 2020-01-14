@@ -23,6 +23,8 @@ footer{
     background-color: #333344;
     color: white;
     box-shadow: 0 -5px 5px -5px #333;
+    bottom: 0;
+    left: 0;
 }
 img{
     width: 250px;
