@@ -14,17 +14,30 @@
 
 {% block body %}
     <body>
-        {% block header %}
+        {% block header %}            
             <header>
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
-                        <a class="navbar-brand" href="{% url 'polls:home'%}"><strong>ЛОГО</strong></a>
-                        <div class="collapse navbar-collapse">
+                        <img class="navbar-brand" src="{% static 'polls/images/logo.jpg' %}">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                            <img class="navbar-toggler-icon" src="{% static 'polls/images/menu.png' %}">
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                             <ul class="navbar-nav mr-auto">
                                 {% block header_buttons %}
                                 {% endblock %}
                             </ul>
+                            <form class="form-inline my-2 my-lg-0 ml-auto " type="GET" action="{% url 'polls:home'%}" >
+                                {% block input_block %}
+                                {% endblock %}
+                                <div class="input-group-append">
+                                    <button class="btn btn-search" type="submit">Найти</button>
+                                </div>
+                            </form>
                         </div>
+
+                        
                     </div>
                 </nav>
             </header>
@@ -37,31 +50,10 @@
 
             {% block footer %}
                 <!-- Footer -->
-                <footer class="page-footer font-small teal pt-4">
-                    <div class="container-fluid text-center text-md-left">
-                        <div class="row">
-                            <div class="col-md-6 mt-md-0 mt-3">
-
-                                <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-                                <p></p>
-
-                            </div>
-
-                            <hr class="clearfix w-100 d-md-none pb-3">
-
-                            <div class="col-md-6 mb-md-0 mb-3">
-
-                                <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-                                <p></p>
-
-                            </div>
-                        </div>
+                <footer class="page-footer font-small blue">
+                    <div class="footer-copyright text-center py-2">© 2020 Copyright:
+                    <a href="https://snews.pythonanywhere.com/">snews.pythonanywhere.com</a>
                     </div>
-
-                    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-                    </div>
-
                 </footer>
 
                 {% block scripts %}

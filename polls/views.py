@@ -17,15 +17,14 @@ def item(request, title):
     
 def main(request):      
     pub_date = ""    
-    if request.GET:
-        try:
-            pub_date = request.GET["pub_date"]                
-        except:
-            pub_date = ""
+    if request.GET:        
+        pub_date = request.GET.get('pub_date')              
+        title = request.GET.get('title')
     snews = New.objects.all()    
     if pub_date:
-        snews = snews.filter(pub_date__icontains=pub_date)    
-        
+        snews = snews.filter(pub_date__icontains=pub_date)
+    if title:    
+        snews = snews.filter(title__icontains=title)
     paginator = Paginator(snews, COUNT_BLOCKS_ON_PAGE)     
     page = request.GET.get('page')        
     try:
@@ -61,7 +60,8 @@ def main(request):
 
     return render(request, 'news.html', {
         'snews': snews,
-        'pub_date': pub_date,       
+        'pub_date': pub_date,  
+        "title": title,     
         "pages": pages,
         "popular": popular,
     })  

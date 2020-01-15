@@ -21,6 +21,10 @@
     </li>    
 {% endblock %}
 
+{% block input_block %}
+    <input type="text" name="title" class="form-control search" placeholder="Введите название" value="{{title}}">
+{% endblock %}
+
 {% block container %}
     <div class="container">
         <div class="row">
@@ -31,7 +35,7 @@
                     Трансляция
                 </h1>
                 <div id="ytplayer" class="d-flex mr-3" ></div>    
-                <img src="{% static 'polls/images/line.png'%}" alt="" style="width:100%;height:auto;">
+                <img src="{% static 'polls/images/line.png'%}" alt="" class="line">
                 <h1 class="pg-title-top">
                     Популярное
                 </h1>
