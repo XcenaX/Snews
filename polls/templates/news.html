@@ -39,7 +39,7 @@
 
                     <!-- FOREACH -->
                         {% for item in popular %}
-                            <a href="{% url 'polls:new' item.img_url %}">
+                            <a href="{% url 'polls:new' item.url_name %}">
                                 <li class="media">
                                     <div class="media-body">
                                         <h5 class="mt-0 mb-1 font-weight-bold">
