@@ -5,8 +5,12 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 COUNT_BLOCKS_ON_PAGE = 10
 
-def item(request, title):         
+def item(request, title): 
+
     current_new = New.objects.filter(url_name=title).first()
+    current_new.views += 1
+    current_new.save()
+
     return render(request, 'onesnews.html', {
         "current_new": current_new,
     })  
@@ -52,11 +56,14 @@ def main(request):
     else:
         pages = [1,2,3,4,5,paginator.num_pages]
         snews = paginator.page(1)
+    
+    popular = New.objects.order_by("-views")[:5]
 
     return render(request, 'news.html', {
         'snews': snews,
         'pub_date': pub_date,       
         "pages": pages,
+        "popular": popular,
     })  
 
 

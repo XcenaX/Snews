@@ -31,25 +31,27 @@
                     Трансляция
                 </h1>
                 <div id="ytplayer" class="d-flex mr-3" ></div>    
-                <img src="line.png" alt="" style="width:100%;height:auto;">
+                <img src="{% static 'polls/images/line.png'%}" alt="" style="width:100%;height:auto;">
                 <h1 class="pg-title-top">
                     Популярное
                 </h1>
                 <ul class="top">
 
                     <!-- FOREACH -->
-                        <a href="">
-                            <li class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1 font-weight-bold">
-                                        НАЗВАНИЕ НОВОСТИ
-                                    </h5>
-                                    <span class="date">
-                                        ДАТА НОВОСТИ
-                                    </span>
-                                </div>
-                            </li>
-                        </a>
+                        {% for item in popular %}
+                            <a href="{% url 'polls:new' item.img_url %}">
+                                <li class="media">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1 font-weight-bold">
+                                            {{item.title}}
+                                        </h5>
+                                        <span class="date">
+                                            {{item.pub_date}}
+                                        </span>
+                                    </div>
+                                </li>
+                            </a>
+                        {% endfor %}
                     <!-- /FOREACH -->
     
                 </ul>

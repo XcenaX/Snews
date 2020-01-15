@@ -9,7 +9,8 @@ class New(models.Model):
     pub_date = models.DateTimeField(default=datetime.date.today)    
     content = models.CharField(max_length=200)    
     img_url = models.CharField(max_length=200)    
-    url_name = models.CharField(max_length=200, default="")    
+    url_name = models.CharField(max_length=200, default="")  
+    views = models.IntegerField(default=0)  
 
 class User(models.Model):
     login = models.CharField(max_length=100, default="") 
