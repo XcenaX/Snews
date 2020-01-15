@@ -16,7 +16,8 @@ def item(request, title):
     })  
     
 def main(request):      
-    pub_date = ""    
+    pub_date = ""  
+    title = ""  
     if request.GET:        
         pub_date = request.GET.get('pub_date')              
         title = request.GET.get('title')
