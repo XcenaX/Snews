@@ -16,11 +16,9 @@ def item(request, title):
     })  
     
 def main(request):      
-    pub_date = ""  
-    title = ""  
-    if request.GET:        
-        pub_date = request.GET.get('pub_date')              
-        title = request.GET.get('title')
+    pub_date = request.GET.get('pub_date')              
+    title = request.GET.get('title')
+        
     snews = New.objects.all()    
     if pub_date:
         snews = snews.filter(pub_date__icontains=pub_date)
