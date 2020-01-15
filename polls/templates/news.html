@@ -25,13 +25,34 @@
     <div class="container">
         <div class="row">
 
-            <!-- Video -->
-            <div class="col">
-                <h1 class="pg-title">
+            <!-- Video -->            
+            <div class="col left">
+                <h1 class="pg-title-tran">
                     Трансляция
                 </h1>
-                <div id="ytplayer" class="d-flex mr-3" ></div>
-                <iframe src="https://www.youtube.com/embed/" height="auto" width="100%"></iframe>
+                <div id="ytplayer" class="d-flex mr-3" ></div>    
+                <img src="line.png" alt="" style="width:100%;height:auto;">
+                <h1 class="pg-title-top">
+                    Популярное
+                </h1>
+                <ul class="top">
+
+                    <!-- FOREACH -->
+                        <a href="">
+                            <li class="media">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1 font-weight-bold">
+                                        НАЗВАНИЕ НОВОСТИ
+                                    </h5>
+                                    <span class="date">
+                                        ДАТА НОВОСТИ
+                                    </span>
+                                </div>
+                            </li>
+                        </a>
+                    <!-- /FOREACH -->
+    
+                </ul>
             </div>
 
             <!-- News -->

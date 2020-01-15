@@ -16,6 +16,7 @@ header{
 header a{
     color: white;
     text-decoration: none;
+    font-size: 24px;
 }
 header a:hover{
     text-shadow: 1px 1px 2px black, 0 0 1em white;
@@ -73,9 +74,25 @@ a:hover{
 @media (max-width:700px){
     img{
         width: 100% !important;
-        height: 100% !important;
+        height: auto !important;
     }
     .media{
         flex-direction: column;
     }
+}
+.col-lg-8{
+    box-shadow: -5px 0 5px -5px #333;
+}
+
+ul{
+    padding-inline-start: 0px;
+}
+.top li{
+    box-shadow: 0 5px 5px -5px #333;
+}
+.left{
+    text-align: center;
+}
+.left img{
+    
 }
