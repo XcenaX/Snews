@@ -22,8 +22,12 @@ def main(request):
     snews = New.objects.all()    
     if pub_date:
         snews = snews.filter(pub_date__icontains=pub_date)
+    else:
+        pub_date = ""
     if title:    
         snews = snews.filter(title__icontains=title)
+    else:
+        title = ""
     paginator = Paginator(snews, COUNT_BLOCKS_ON_PAGE)     
     page = request.GET.get('page')        
     try:
