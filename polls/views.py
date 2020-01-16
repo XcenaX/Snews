@@ -2,7 +2,7 @@ from .models import New
 from django.shortcuts import render
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger        
-
+from datetime import datetime, timezone
 COUNT_BLOCKS_ON_PAGE = 10
 
 def item(request, title): 
@@ -12,15 +12,26 @@ def item(request, title):
     print(current_new.pub_date)
     current_new.save()
 
-    return render(request, 'onesnews.html', {
+    return render(request, 'page.html', {
         "current_new": current_new,
     })  
+
+def about(request):     
+    return render(request, 'about.html', {        
+    })  
     
+def utc_to_local(utc_dt):
+    return utc_dt.replace(tzinfo=timezone.utc).astimezone(tz=None)
+
 def main(request):      
     pub_date = request.GET.get('pub_date')              
     title = request.GET.get('title')
         
     snews = New.objects.all()    
+
+    
+        
+
     if pub_date:
         snews = snews.filter(pub_date__icontains=pub_date)
     else:

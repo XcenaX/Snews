@@ -55,7 +55,7 @@ def parse_one_new(url): # функция парсит одну новость п
     current_new = New.objects.filter(title=title, content=content, img_url=img_url)    
     print(title + "\n")
     if len(current_new) == 0:
-        new = New.objects.create(title=title, content=content, img_url=img_url, pub_date=pub_date, url_name=url_name)
+        new = New.objects.create(title=title, content=content, img_url=img_url, pub_date=timezone.now(), url_name=url_name)
         new.save() 
     else:
         print("это уже есть -> (" + title + ")")       

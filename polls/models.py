@@ -6,7 +6,7 @@ import datetime
 
 class New(models.Model):
     title = models.CharField(max_length=201)    
-    pub_date = models.DateTimeField(default=datetime.date.today.format("YYYY-MM-DD HH:MM"))    
+    pub_date = models.CharField(default=str(datetime.datetime.today), max_length=300)    
     content = models.CharField(max_length=200)    
     img_url = models.CharField(max_length=200)    
     url_name = models.CharField(max_length=200, default="")  

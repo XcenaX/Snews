@@ -1,33 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'polls/styles/nav.css' %}">
-    <link rel="stylesheet" href="{% static 'polls/styles/navigation.css' %}">
-    <link rel="stylesheet" href="{% static 'polls/styles/page.css' %}">    
-{% endblock %}    
+{% block styles %}    
+    <link rel="stylesheet" href="{% static 'polls/styles/main.css' %}">
+    <link rel="stylesheet" href="bootstrap-datepicker.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'polls/styles/new.css' %}">
+{% endblock %}
 
-{% block info %}
-    <!-- НОВОСТИ -->
-    <div class="col-xs-12 col-md-8 col-lg-8 pull-right content-offset">
-        <h1 class="pg-title">
-            {{current_new.title}}
-        </h1>
+{% block header_buttons %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'polls:home'%}">Главная</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Популярное</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">О нас</a>
+    </li>
+{% endblock %}
 
-        <div class="media-block-wrap">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                        <div class="media-block horizontal with-date has-img size-3">
-                            <div href="#" class="mainimg">                                        
-                                <img src="{{current_new.img_url}}">
-                            </div>
-                            <div class="content">
-                                <span class="date">{{current_new.pub_date}}</span>                                    
-                                <h4 class="media-block__title">                                            
-                                    <span class="title">{{ current_new.content }}</span>
-                                </h4>
-                            </div>
+{% block container %}
+    <div class="container">
+        <div class="row">
+                <div class="col col-lg-12">
+                        <img class="d-flex mr-3" src="{{current_new.img_url}}" alt="Generic placeholder image">
+                        <div class="media-body">
+                                <h5 class="mt-0 mb-1 font-weight-bold">{{current_new.title}}</h5>
+                                <span>{{current_new.pub_date}}</span>
+                                <p>{{current_new.content}}</p>
                         </div>
                 </div>
             </div>
