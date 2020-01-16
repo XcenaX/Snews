@@ -76,22 +76,22 @@ WSGI_APPLICATION = 'area.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'XCENAX$default',
-#         'USER': 'XCENAX',
-#         'PASSWORD': 'Dagad582#',
-#         'HOST': 'XCENAX.mysql.pythonanywhere-services.com',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Snews$default',
+        'USER': 'Snews',
+        'PASSWORD': 'Dagad582#',
+        'HOST': 'Snews.mysql.pythonanywhere-services.com',
+    }
+}
 
 
 # Password validation
