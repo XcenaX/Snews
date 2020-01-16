@@ -9,6 +9,7 @@ def item(request, title):
 
     current_new = New.objects.filter(url_name=title).first()
     current_new.views += 1
+    print(current_new.pub_date)
     current_new.save()
 
     return render(request, 'onesnews.html', {
